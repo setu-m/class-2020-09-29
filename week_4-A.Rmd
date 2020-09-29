@@ -90,7 +90,12 @@ view(d_2018)
 
 **Prompt:** Combine the five tibbles which you have into a single tibble which can then be used for analysis and graphics. There are many ways to do this, but we recommend `bind_rows()`. Hint: make use of the `.id` argument, which may be aided by placing the tibbles in a list.
 
+```{r}
+comb_year <- bind_rows(list(d_2019, d_2018, d_2017, d_2016, d_2015), .id = "year") %>%
+  mutate(year = as.numeric(year) +2014)
 
+view(comb_year)
+```
 
 ### Scene 5
 
